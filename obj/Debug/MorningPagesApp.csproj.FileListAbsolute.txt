@@ -1,0 +1,15 @@
+D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\MorningPagesApp.exe.config
+D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\MorningPagesApp.exe
+D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\MorningPagesApp.pdb
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.csprojAssemblyReference.cache
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.MainForm.resources
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.Properties.Resources.resources
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.csproj.GenerateResource.cache
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.csproj.CoreCompileInputs.cache
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.exe
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.pdb
+D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\log4net.dll
+D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\log4net.xml
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.csproj.CopyComplete
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.SettingsForm.resources
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.SettingsFormTreePanel1.resources
