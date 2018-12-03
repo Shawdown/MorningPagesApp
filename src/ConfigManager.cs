@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 
 namespace MorningPagesApp
 {
@@ -13,6 +14,12 @@ namespace MorningPagesApp
         public const string FONT_COLOR = "font_color";
         public const string BACKGROUND_COLOR = "background_color";
         public const string AUTOSAVE_INTERVAL_SEC = "autosave_interval_sec";
+        public const string SHOW_CURRENT_PROGRESS = "show_current_progress";
+        public const string GOAL_REACHED_BACKGROUND_COLOR = "goal_reached_background_color";
+        public const string DROPBOX_ACCESS_TOKEN = "dropbox_access_token";
+        public const string DROPBOX_UID = "dropbox_uid";
+        public const string DROPBOX_ENABLED = "dropbox_enabled";
+        public const string DROPBOX_SYNC_INTERVAL_SEC = "dropbox_sync_interval_sec";
     }
 
     public class ConfigManager
@@ -27,6 +34,11 @@ namespace MorningPagesApp
         public static void UnsubscribeFromUpdates(IConfigListener listener)
         {
             Listeners.Remove(listener);
+        }
+
+        public static bool ReadBoolSetting(string key)
+        {
+            return bool.Parse(ReadSetting(key));
         }
 
         public static string ReadSetting(string key)
@@ -56,6 +68,12 @@ namespace MorningPagesApp
                 }
                 else
                 {
+                    if (settings[key].Value == value)
+                    {
+                        // Values are the same.
+                        return;
+                    }
+
                     settings[key].Value = value;
                 }
                 configFile.Save(ConfigurationSaveMode.Modified);

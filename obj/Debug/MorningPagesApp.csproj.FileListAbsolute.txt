@@ -12,4 +12,10 @@ D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\log4net.dll
 D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\log4net.xml
 D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.csproj.CopyComplete
 D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.SettingsForm.resources
-D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.SettingsFormTreePanel1.resources
+D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\Dropbox.Api.dll
+D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\Newtonsoft.Json.dll
+D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\Dropbox.Api.xml
+D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\Newtonsoft.Json.pdb
+D:\projects\MorningPagesApp\MorningPagesApp\bin\Debug\Newtonsoft.Json.xml
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.SettingsFormTreeDropboxPanel.resources
+D:\projects\MorningPagesApp\MorningPagesApp\obj\Debug\MorningPagesApp.SettingsFormTreeMainPanel.resources

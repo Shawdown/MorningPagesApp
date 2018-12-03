@@ -1,4 +1,5 @@
-﻿using log4net;
+﻿using System;
+using log4net;
 
 namespace MorningPagesApp
 {
@@ -30,6 +31,7 @@ namespace MorningPagesApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.rtbText = new System.Windows.Forms.RichTextBox();
             this.lCurrentProgress = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -39,6 +41,7 @@ namespace MorningPagesApp
             // 
             // rtbText
             // 
+            this.rtbText.BackColor = System.Drawing.SystemColors.Window;
             this.rtbText.Location = new System.Drawing.Point(13, 27);
             this.rtbText.Name = "rtbText";
             this.rtbText.Size = new System.Drawing.Size(671, 567);
@@ -52,16 +55,18 @@ namespace MorningPagesApp
             this.lCurrentProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lCurrentProgress.AutoSize = true;
+            this.lCurrentProgress.BackColor = System.Drawing.SystemColors.Control;
             this.lCurrentProgress.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lCurrentProgress.Location = new System.Drawing.Point(591, 597);
             this.lCurrentProgress.Name = "lCurrentProgress";
-            this.lCurrentProgress.Size = new System.Drawing.Size(66, 20);
+            this.lCurrentProgress.Size = new System.Drawing.Size(33, 20);
             this.lCurrentProgress.TabIndex = 1;
-            this.lCurrentProgress.Text = "666/750";
+            this.lCurrentProgress.Text = "0/0";
             this.lCurrentProgress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu_bSettings});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -82,10 +87,12 @@ namespace MorningPagesApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(696, 619);
             this.Controls.Add(this.lCurrentProgress);
             this.Controls.Add(this.rtbText);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Morning Pager";
             this.Activated += new System.EventHandler(this.MainForm_Activated);

@@ -5,7 +5,8 @@ namespace MorningPagesApp
 {
     public partial class SettingsForm : Form
     {
-        private SettingsFormTreePanel1 tvPanel1 = new SettingsFormTreePanel1();
+        private SettingsFormTreeMainPanel tvMainPanel = new SettingsFormTreeMainPanel();
+        private SettingsFormTreeDropboxPanel tvDropboxPanel = new SettingsFormTreeDropboxPanel();
         private UserControl activePanel;
         private bool statusChanged = false;
 
@@ -18,18 +19,33 @@ namespace MorningPagesApp
         private void tvSettings_AfterSelect(object sender, TreeViewEventArgs e)
         {
             UserControl newPanel = null;
-            if (e.Node.Index == 0)
+
+            if (e.Node.Level == 0) // nodes w/o children
             {
-                newPanel = tvPanel1;
+                if (e.Node.Index == 0) // Main
+                {
+                    newPanel = tvMainPanel;
+                }
+            }
+            else if (e.Node.Level == 1) // nodes with children
+            {
+                if (e.Node.Parent.Index == 1) // Cloud sync
+                {
+                    if (e.Node.Index == 0) // Dropbox
+                    {
+                        newPanel = tvDropboxPanel;
+                    }
+                }
+            }
+
+            if (activePanel != null)
+            {
+                activePanel.Hide();
+                Controls.Remove(activePanel);
             }
 
             if (newPanel != null)
             {
-                if (activePanel != null)
-                {
-                    activePanel.Hide();
-                    this.Controls.Remove(activePanel);
-                }
                 newPanel.Show();
                 newPanel.Dock = DockStyle.Fill;
                 tlpSettings.Controls.Add(newPanel);
@@ -41,13 +57,16 @@ namespace MorningPagesApp
 
         private void SettingsForm_Load(object sender, System.EventArgs e)
         {
-            tvPanel1.LoadSettings();
+            tvMainPanel.LoadSettings();
+            tvDropboxPanel.LoadSettings();
 
-            tvPanel1.Visible = false;
+            tvMainPanel.Visible = false;
+            tvDropboxPanel.Visible = false;
 
             tvSettings.SelectedNode = tvSettings.Nodes[0];
 
-            AddEnableSaveOnChanges(tvPanel1);
+            AddEnableSaveOnChanges(tvMainPanel);
+            AddEnableSaveOnChanges(tvDropboxPanel);
         }
 
         private void AddEnableSaveOnChanges(Control obj)

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Main");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Dropbox");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Cloud sync", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvSettings = new System.Windows.Forms.TreeView();
             this.tlpSettings = new System.Windows.Forms.TableLayoutPanel();
@@ -64,8 +67,13 @@
             this.tvSettings.Name = "tvSettings";
             treeNode1.Name = "tvSettingsNodeMain";
             treeNode1.Text = "Main";
+            treeNode2.Name = "tvCloudSyncDropbox";
+            treeNode2.Text = "Dropbox";
+            treeNode3.Name = "tvSettingsNodeCloudSync";
+            treeNode3.Text = "Cloud sync";
             this.tvSettings.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode1,
+            treeNode3});
             this.tvSettings.Size = new System.Drawing.Size(240, 554);
             this.tvSettings.TabIndex = 0;
             this.tvSettings.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvSettings_AfterSelect);
