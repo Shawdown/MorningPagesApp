@@ -41,6 +41,9 @@ namespace MorningPagesApp
             // 
             // rtbText
             // 
+            this.rtbText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbText.BackColor = System.Drawing.SystemColors.Window;
             this.rtbText.Location = new System.Drawing.Point(13, 27);
             this.rtbText.Name = "rtbText";
@@ -52,8 +55,7 @@ namespace MorningPagesApp
             // 
             // lCurrentProgress
             // 
-            this.lCurrentProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lCurrentProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lCurrentProgress.AutoSize = true;
             this.lCurrentProgress.BackColor = System.Drawing.SystemColors.Control;
             this.lCurrentProgress.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -67,6 +69,7 @@ namespace MorningPagesApp
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu_bSettings});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -79,7 +82,7 @@ namespace MorningPagesApp
             // 
             this.menu_bSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menu_bSettings.Name = "menu_bSettings";
-            this.menu_bSettings.Size = new System.Drawing.Size(61, 20);
+            this.menu_bSettings.Size = new System.Drawing.Size(75, 20);
             this.menu_bSettings.Text = "Settings";
             this.menu_bSettings.Click += new System.EventHandler(this.menu_bSettings_Click);
             // 
@@ -93,6 +96,7 @@ namespace MorningPagesApp
             this.Controls.Add(this.rtbText);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "MainForm";
             this.Text = "Morning Pager";
             this.Activated += new System.EventHandler(this.MainForm_Activated);

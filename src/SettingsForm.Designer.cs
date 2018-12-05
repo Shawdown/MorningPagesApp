@@ -32,6 +32,7 @@
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Dropbox");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Cloud sync", new System.Windows.Forms.TreeNode[] {
             treeNode2});
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvSettings = new System.Windows.Forms.TreeView();
             this.tlpSettings = new System.Windows.Forms.TableLayoutPanel();
@@ -123,8 +124,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 561);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsForm";
-            this.Text = "Morning Pager Settings";
+            this.Text = "Settings";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

@@ -22,6 +22,7 @@ namespace MorningPagesApp
         private TextBox tbGoalReachedBgColor;
         private Label lGoalCompleteBgColor;
         private Button bSetGoalCompleteBgColor;
+        private CheckBox cbShowCurrentProgress;
         private TextBox tbWordGoal;
 
         public bool IsValid()
@@ -56,6 +57,7 @@ namespace MorningPagesApp
             ConfigManager.UpdateSetting(ConfigKeys.FONT_SIZE, tbFontSize.Text);
             ConfigManager.UpdateSetting(ConfigKeys.AUTOSAVE_INTERVAL_SEC, tbAutosaveInterval.Text);
             ConfigManager.UpdateSetting(ConfigKeys.GOAL_REACHED_BACKGROUND_COLOR, tbGoalReachedBgColor.Text);
+            ConfigManager.UpdateSetting(ConfigKeys.SHOW_CURRENT_PROGRESS, cbShowCurrentProgress.Checked.ToString());
         }
 
         public void LoadSettings()
@@ -66,6 +68,15 @@ namespace MorningPagesApp
             tbFontSize.Text = ConfigManager.ReadSetting(ConfigKeys.FONT_SIZE);
             tbAutosaveInterval.Text = ConfigManager.ReadSetting(ConfigKeys.AUTOSAVE_INTERVAL_SEC);
             tbGoalReachedBgColor.Text = ConfigManager.ReadSetting(ConfigKeys.GOAL_REACHED_BACKGROUND_COLOR);
+
+            try
+            {
+                cbShowCurrentProgress.Checked = ConfigManager.ReadBoolSetting(ConfigKeys.SHOW_CURRENT_PROGRESS);
+            }
+            catch (SystemException e)
+            {
+                Program.log.Info(e.Message);
+            }
         }
 
         public SettingsFormTreeMainPanel()
@@ -90,6 +101,7 @@ namespace MorningPagesApp
             this.tbGoalReachedBgColor = new System.Windows.Forms.TextBox();
             this.lGoalCompleteBgColor = new System.Windows.Forms.Label();
             this.bSetGoalCompleteBgColor = new System.Windows.Forms.Button();
+            this.cbShowCurrentProgress = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lWordGoal
@@ -244,8 +256,19 @@ namespace MorningPagesApp
             this.bSetGoalCompleteBgColor.UseVisualStyleBackColor = true;
             this.bSetGoalCompleteBgColor.Click += new System.EventHandler(this.bSetGoalCompleteBgColor_Click);
             // 
+            // cbShowCurrentProgress
+            // 
+            this.cbShowCurrentProgress.AutoSize = true;
+            this.cbShowCurrentProgress.Location = new System.Drawing.Point(150, 215);
+            this.cbShowCurrentProgress.Name = "cbShowCurrentProgress";
+            this.cbShowCurrentProgress.Size = new System.Drawing.Size(138, 17);
+            this.cbShowCurrentProgress.TabIndex = 15;
+            this.cbShowCurrentProgress.Text = "Show current progress?";
+            this.cbShowCurrentProgress.UseVisualStyleBackColor = true;
+            // 
             // SettingsFormTreeMainPanel
             // 
+            this.Controls.Add(this.cbShowCurrentProgress);
             this.Controls.Add(this.bSetGoalCompleteBgColor);
             this.Controls.Add(this.tbGoalReachedBgColor);
             this.Controls.Add(this.lGoalCompleteBgColor);
@@ -262,7 +285,7 @@ namespace MorningPagesApp
             this.Controls.Add(this.tbWordGoal);
             this.Controls.Add(this.lWordGoal);
             this.Name = "SettingsFormTreeMainPanel";
-            this.Size = new System.Drawing.Size(370, 200);
+            this.Size = new System.Drawing.Size(370, 376);
             this.ResumeLayout(false);
             this.PerformLayout();
 

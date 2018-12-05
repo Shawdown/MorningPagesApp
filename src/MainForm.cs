@@ -114,6 +114,17 @@ namespace MorningPagesApp
         {
             try
             {
+                if (key == ConfigKeys.SHOW_CURRENT_PROGRESS)
+                {
+                    try
+                    {
+                        lCurrentProgress.Visible = bool.Parse(newValue);
+                    }
+                    catch (SystemException e)
+                    {
+                        Program.log.Info(e.Message);
+                    }
+                }
                 if (key == ConfigKeys.AUTOSAVE_INTERVAL_SEC)
                 {
                     autosaveTimer.Stop();
@@ -153,7 +164,7 @@ namespace MorningPagesApp
         {
             try
             {
-                lCurrentProgress.Visible = bool.Parse(ConfigManager.ReadSetting("show_current_progress"));
+                lCurrentProgress.Visible = ConfigManager.ReadBoolSetting(ConfigKeys.SHOW_CURRENT_PROGRESS);
             }
             catch (SystemException ex)
             {
